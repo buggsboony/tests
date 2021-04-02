@@ -1,0 +1,79 @@
+ 
+
+<style>
+  
+     
+    .container {
+      background:plum;
+      position: absolute;
+     
+      
+    }
+    
+    input {
+      position: absolute;
+     visibility: hidden;
+    }
+    
+
+
+    /* Background label*/
+    label {
+      
+      display: block;
+      position: relative;
+      margin: 6px;
+      padding: 6px 10px 6px 40px;
+      border: 3px solid #fff;
+      border-radius: 100px;
+      color: #fff;
+      background-color: #195816;
+      box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none;
+      transition: background-color .2s, box-shadow .2s;
+      border:solid 10 px;
+           
+    }
+    
+
+    /* fake checkbox non sélectionné */
+    label::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 10px;
+      bottom: 10px;
+      left: 10px;
+      width: 10px;
+      border: 1px solid #fff;
+      border-radius: 100px;
+      background: rgb(167, 228, 170);
+      transition: background-color .2s;
+    }
+    
+    label:hover, input:focus + label {
+      box-shadow: 0 0 20px rgba(0, 0, 0, .6);
+    }
+    
+    input:checked + label {
+      background-color: #e0cfd3;
+    }
+    
+    input:checked + label::before {
+      background-color: #fff;
+    }
+    </style>
+
+<div class="container">
+  <input id="toggle1" type="checkbox" checked>
+  <label for="toggle1">Toggle me!</label>
+
+  <input id="toggle2" type="checkbox">
+  <label for="toggle2">Hey, me too!</label>
+
+  <input id="toggle3" type="checkbox">
+  <label for="toggle3">Toggle party!</label>
+</div>
+ 
