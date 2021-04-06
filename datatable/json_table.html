@@ -1,0 +1,64 @@
+
+
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+        <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+
+
+<table id="myTable">	
+</table>
+
+<?php
+
+echo "TRAITEments actions";
+$current_tab="tab_general";
+?>
+
+
+<script>
+
+
+   var strData = [{
+            "componentNumber": "A",
+            "factory": "India",
+            "productNumber": "CR",
+            "productRevisionState": "123",
+            "placementTimeLocal": "2018-08-21T00:00:00",
+            "position": "up"
+        }, {
+            "componentNumber": "B",
+            "factory": "france",
+            "productNumber": "CR",
+            "productRevisionState": "124",
+            "placementTimeLocal": "2018-08-21T00:00:00",
+            "position": "up"
+        },
+        {
+            "componentNumber": "C",
+            "factory": "Bali",
+            "productNumber": "CR",
+            "productRevisionState": "125",
+            "placementTimeLocal": "2018-08-21T00:00:00",
+            "position": "up"
+        }
+    ];
+
+
+var adColumns = [];
+  Object.keys(strData[0]).forEach(key => {
+    var col = {
+      data: key,
+      title: key
+    };
+
+    adColumns.push(col);
+  });
+
+
+
+$(document).ready(function() {
+    $('#myTable').DataTable({
+        "data": strData,
+        "columns": JSON.parse(JSON.stringify(adColumns))
+    });
+} );
+</script>
